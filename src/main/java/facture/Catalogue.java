@@ -1,15 +1,25 @@
 package facture;
 
+import java.util.HashMap;
+import java.util.Map.Entry;
+
 public class Catalogue {
-    
+
+    HashMap<String, Article> catalogue = new HashMap<>();
+
     public void addArticle(Article article) {
-         // TODO: Implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");
+        catalogue.put(article.getCode(), article);
     }
-    
+
     public Article findByCode(String code) {
-         // TODO: Implémenter cette méthode
-        throw new UnsupportedOperationException("Pas encore implémenté");
+        for (Entry<String,Article> entry : catalogue.entrySet()) {
+            if (entry.getKey() == code) {
+                return entry.getValue();
+            }
+            
+        }
+        return null;
+     
     }
-    
+
 }

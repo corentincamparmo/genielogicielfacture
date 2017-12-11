@@ -3,6 +3,7 @@ package facture;
 public class Client {
  
     private String address;
+    
 
     public Client(String name, String address) {
         this.address = address;
